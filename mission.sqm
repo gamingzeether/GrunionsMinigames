@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=603;
+		nextID=605;
 	};
 	class LayerIndexProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={-5.3054419,4.5394192,-20.612268};
-		dir[]={0.83146632,-0.36123216,0.42210796};
-		up[]={0.32210201,0.93247592,0.16352056};
-		aside[]={0.45267439,0,-0.89167595};
+		pos[]={554.58618,15.234077,-267.59436};
+		dir[]={-0.75192082,-0.30202824,0.58599836};
+		up[]={-0.23822676,0.95329899,0.18565848};
+		aside[]={0.61470574,0,0.78875655};
 	};
 };
 binarizationWanted=0;
@@ -133,7 +133,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=22;
+		items=23;
 		class Item0
 		{
 			dataType="Layer";
@@ -270,29 +270,6 @@ class Mission
 		};
 		class Item1
 		{
-			dataType="Layer";
-			name="Fysh In A Barrel";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Logic";
-					class PositionInfo
-					{
-						position[]={-5.1760001,2.7899933,856.87};
-					};
-					name="fyshInABarrelLogic";
-					id=580;
-					type="Logic";
-					atlOffset=188.75999;
-				};
-			};
-			id=164;
-			atlOffset=188.75999;
-		};
-		class Item2
-		{
 			dataType="Group";
 			side="West";
 			class Entities
@@ -364,7 +341,7 @@ class Mission
 			id=581;
 			atlOffset=187.72385;
 		};
-		class Item3
+		class Item2
 		{
 			dataType="Group";
 			side="West";
@@ -437,7 +414,7 @@ class Mission
 			id=582;
 			atlOffset=187.79585;
 		};
-		class Item4
+		class Item3
 		{
 			dataType="Group";
 			side="West";
@@ -510,7 +487,7 @@ class Mission
 			id=583;
 			atlOffset=187.7049;
 		};
-		class Item5
+		class Item4
 		{
 			dataType="Group";
 			side="West";
@@ -583,7 +560,7 @@ class Mission
 			id=584;
 			atlOffset=187.722;
 		};
-		class Item6
+		class Item5
 		{
 			dataType="Group";
 			side="West";
@@ -656,7 +633,7 @@ class Mission
 			id=585;
 			atlOffset=187.72009;
 		};
-		class Item7
+		class Item6
 		{
 			dataType="Group";
 			side="West";
@@ -729,7 +706,7 @@ class Mission
 			id=586;
 			atlOffset=187.7274;
 		};
-		class Item8
+		class Item7
 		{
 			dataType="Group";
 			side="West";
@@ -802,7 +779,7 @@ class Mission
 			id=587;
 			atlOffset=187.70506;
 		};
-		class Item9
+		class Item8
 		{
 			dataType="Group";
 			side="West";
@@ -875,7 +852,7 @@ class Mission
 			id=588;
 			atlOffset=187.72729;
 		};
-		class Item10
+		class Item9
 		{
 			dataType="Group";
 			side="West";
@@ -948,7 +925,7 @@ class Mission
 			id=589;
 			atlOffset=187.71748;
 		};
-		class Item11
+		class Item10
 		{
 			dataType="Group";
 			side="West";
@@ -1021,7 +998,7 @@ class Mission
 			id=590;
 			atlOffset=187.71188;
 		};
-		class Item12
+		class Item11
 		{
 			dataType="Group";
 			side="West";
@@ -1094,7 +1071,7 @@ class Mission
 			id=591;
 			atlOffset=187.70705;
 		};
-		class Item13
+		class Item12
 		{
 			dataType="Group";
 			side="West";
@@ -1167,7 +1144,7 @@ class Mission
 			id=592;
 			atlOffset=187.71031;
 		};
-		class Item14
+		class Item13
 		{
 			dataType="Group";
 			side="West";
@@ -1240,7 +1217,7 @@ class Mission
 			id=593;
 			atlOffset=187.7047;
 		};
-		class Item15
+		class Item14
 		{
 			dataType="Group";
 			side="West";
@@ -1313,7 +1290,7 @@ class Mission
 			id=594;
 			atlOffset=187.79347;
 		};
-		class Item16
+		class Item15
 		{
 			dataType="Group";
 			side="West";
@@ -1386,7 +1363,7 @@ class Mission
 			id=595;
 			atlOffset=187.71667;
 		};
-		class Item17
+		class Item16
 		{
 			dataType="Group";
 			side="West";
@@ -1459,7 +1436,7 @@ class Mission
 			id=596;
 			atlOffset=187.71483;
 		};
-		class Item18
+		class Item17
 		{
 			dataType="Group";
 			side="West";
@@ -1533,7 +1510,7 @@ class Mission
 			id=597;
 			atlOffset=187.71284;
 		};
-		class Item19
+		class Item18
 		{
 			dataType="Group";
 			side="West";
@@ -1606,7 +1583,7 @@ class Mission
 			id=598;
 			atlOffset=187.72023;
 		};
-		class Item20
+		class Item19
 		{
 			dataType="Group";
 			side="West";
@@ -1679,7 +1656,7 @@ class Mission
 			id=599;
 			atlOffset=187.72266;
 		};
-		class Item21
+		class Item20
 		{
 			dataType="Group";
 			side="West";
@@ -1751,6 +1728,30 @@ class Mission
 			};
 			id=600;
 			atlOffset=187.72012;
+		};
+		class Item21
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={-5.1760001,2.7899933,856.87};
+			};
+			name="fyshInABarrelLogic";
+			id=580;
+			type="Logic";
+			atlOffset=188.75999;
+		};
+		class Item22
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={502.88428,5.2208214,-228.35596};
+			};
+			name="joustingLogic";
+			id=604;
+			type="Logic";
+			atlOffset=191.19083;
 		};
 	};
 };

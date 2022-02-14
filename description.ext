@@ -1,6 +1,7 @@
 class CfgFunctions {
     #include "common\Functions.hpp"
     #include "fyshinabarrel\Functions.hpp"
+    #include "jousting\Functions.hpp"
 };
 
 #include "common\RscTitles.hpp"
