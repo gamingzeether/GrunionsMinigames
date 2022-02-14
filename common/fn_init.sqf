@@ -19,11 +19,7 @@ GVAR(activeSidebar) = "";
 GVAR(shownCountdown) = [];
 
 //Lobby init
-private _walls = [];
-for "_i" from 0 to 36 do {
-    _walls pushBack createVehicle ["Land_Mil_WallBig_4m_F", [0,0,0]];
-};
-[getPosASL LOBBY_LOGICENTITY, 20, _walls, true] call FUNC(distributeRing);
+[getPosASL LOBBY_LOGICENTITY, 20, 1] call FUNC(wallRing);
 [(getPosASL LOBBY_LOGICENTITY) vectorAdd [0, -15, -2], 0, 15, 1, 3, "Land_Pier_F"] call EFUNC(common,distributeGrid);
 
 // Points sidebar

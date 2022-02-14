@@ -18,5 +18,6 @@ class minigames_common {
         class startCountdown {};
         class startMinigame {};
         class updateSidebar {};
+        class wallRing {};
     };
 };
