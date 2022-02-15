@@ -16,6 +16,7 @@ GVAR(activePlayers) = allPlayers;
 private _center = getPosASL MINIGAME_LOGICENTITY;
 [_center, 50, GVAR(activePlayers), 10] call EFUNC(common,distributeCircle);
 
+GVAR(quadbikes) = [];
 private _turret = getArray (configFile >> "CfgVehicles" >> VEHICLE_CLASS >> "ace_weapon_mounting_turret");
 {
     private _veh = createVehicle [VEHICLE_CLASS, [0, 0, 0]];
@@ -25,8 +26,10 @@ private _turret = getArray (configFile >> "CfgVehicles" >> VEHICLE_CLASS >> "ace
     };
     _veh setPosASL getPosASL _x;
     _x moveInDriver _veh;
+    GVAR(quadbikes) pushBack _veh;
 } foreach GVAR(activePlayers);
 
 [MINIGAME_TIME_LIMIT, QGVAR(timeLimit), 0, {
+    if (!isServer) exitWith {};
     call EFUNC(common,endMinigame);
 }] call EFUNC(common,startCountdown);

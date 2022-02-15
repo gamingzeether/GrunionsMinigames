@@ -18,10 +18,6 @@ GVAR(sidebars) = createHashMap;
 GVAR(activeSidebar) = "";
 GVAR(shownCountdown) = [];
 
-//Lobby init
-[getPosASL LOBBY_LOGICENTITY, 20, 1] call FUNC(wallRing);
-[(getPosASL LOBBY_LOGICENTITY) vectorAdd [0, -15, -2], 0, 15, 1, 3, "Land_Pier_F"] call EFUNC(common,distributeGrid);
-
 // Points sidebar
 ["Points", "", QGVAR(pointsScoreboard), clientOwner] call FUNC(addSidebar);
 [QGVAR(pointsScoreboard), clientOwner] call FUNC(showSidebar);
@@ -60,3 +56,9 @@ GVAR(shownCountdown) = [];
     
     [QGVAR(pointsScoreboard), _scoresText, clientOwner] call FUNC(updateSidebar);
 }] call CBA_fnc_addEventHandler;
+
+if (isServer) then {
+    //Lobby init
+    [getPosASL LOBBY_LOGICENTITY, 20, 1] call FUNC(wallRing);
+    [(getPosASL LOBBY_LOGICENTITY) vectorAdd [0, -15, -2], 0, 15, 1, 3, "Land_Pier_F"] call EFUNC(common,distributeGrid);
+};
