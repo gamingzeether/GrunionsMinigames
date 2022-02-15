@@ -13,10 +13,13 @@ class minigames_common {
         class getSidebar {};
         class hideSidebar {};
         class init {};
+        class minigameVotingFinish {};
+        class onMenuSelectChange {};
         class setPoints {};
         class showSidebar {};
         class startCountdown {};
         class startMinigame {};
+        class startMinigameVoting {};
         class updateSidebar {};
         class wallRing {};
     };

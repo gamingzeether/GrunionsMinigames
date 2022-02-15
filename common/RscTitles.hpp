@@ -1,4 +1,3 @@
-#include "..\GUIDefines.hpp"
 #include "script_component.hpp"
 
 class RscTitles {

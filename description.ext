@@ -4,6 +4,23 @@ class CfgFunctions {
     #include "jousting\Functions.hpp"
 };
 
+#include "GUIDefines.hpp"
 #include "common\RscTitles.hpp"
+#include "common\Dialogs.hpp"
 
 respawnOnStart = -1;
+
+class CfgGrunionsMinigames {
+    minigamesList[] = {"FyshInABarrel", "Jousting"};
+    
+    class FyshInABarrel {
+        logicEntity = "fyshInABarrelLogic";
+        minigameInfo = "Fysh In A Barrel";
+        minigameDisplayName = "Fysh In A Barrel";
+    };
+    class Jousting {
+        logicEntity = "joustingLogic";
+        minigameInfo = "Jousting";
+        minigameDisplayName = "Jousting";
+    };
+};

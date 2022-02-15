@@ -20,3 +20,4 @@ respawn setPosASL getPosASL LOBBY_LOGICENTITY;
 [{{deleteVehicle _x} foreach allDeadMen}, nil, 5] call CBA_fnc_waitAndExecute;
 
 [getPosASL LOBBY_LOGICENTITY, 15, allPlayers select {alive _x}, 0.5] call FUNC(distributeCircle);
+call FUNC(startMinigameVoting);

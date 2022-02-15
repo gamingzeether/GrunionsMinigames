@@ -61,4 +61,27 @@ if (isServer) then {
     //Lobby init
     [getPosASL LOBBY_LOGICENTITY, 20, 1] call FUNC(wallRing);
     [(getPosASL LOBBY_LOGICENTITY) vectorAdd [0, -15, -2], 0, 15, 1, 3, "Land_Pier_F"] call EFUNC(common,distributeGrid);
+    
+    // Minigame voting
+    call FUNC(startMinigameVoting);
+    GVAR(minigamesList) = getArray (missionConfigFile >> "CfgGrunionsMinigames" >> "minigamesList");
+    
+    GVAR(votingSelections) = createHashMap;
+    ["minigames_voteSelected", {
+        params ["_player", "_selection"];
+        
+        GVAR(votingSelections) set [_player, _selection];
+        
+        if (!(QGVAR(minigameVoting) in GVAR(activeCountdowns))) then {
+            [120, QGVAR(minigameVoting), 0, {
+                if (isServer) then {
+                    call FUNC(minigameVotingFinish);
+                };
+            }] call FUNC(startCountdown);
+        };
+        
+        if (count GVAR(votingSelections) == count allPlayers) then {
+            call EFUNC(common,minigameVotingFinish);
+        };
+    }] call CBA_fnc_addEventHandler;
 };
