@@ -51,4 +51,4 @@ publicVariable QGVAR(isSelectingMinigame);
     if (isServer) then {
         [_minigameLogic] call FUNC(startMinigame);
     };
-}, [_minigameLogic]] call FUNC(startCountdown);
+}, [_minigameLogic], "Minigame starting: " + getText (_minigameCfg >> "minigameDisplayName")] call FUNC(startCountdown);

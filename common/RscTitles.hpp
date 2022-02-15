@@ -18,6 +18,16 @@ class RscTitles {
                 text = "0.0";
                 SizeEx = GUI_GRID_H * 3;
             };
+            class Title: RscText {
+                idc = 69002;
+                
+                x = 0.4050 * __W + __X;
+                y = 0.0700 * __H + __Y;
+                w = 0.1900 * __W;
+                h = 0.0300 * __H;
+                style = ST_CENTER;
+                SizeEx = GUI_TEXT_SIZE_LARGE;
+            };
         };
     };
     

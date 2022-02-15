@@ -77,7 +77,7 @@ if (isServer) then {
                 if (isServer) then {
                     call FUNC(minigameVotingFinish);
                 };
-            }] call FUNC(startCountdown);
+            }, nil, "Selecting next minigame..."] call FUNC(startCountdown);
         };
         
         if (count GVAR(votingSelections) == count allPlayers) then {

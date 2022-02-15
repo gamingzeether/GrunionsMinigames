@@ -8,6 +8,7 @@
  * 2: Targets <NUMBER> or <OBJECT> or <Strig> or <Side> or <ARRAY>
  * 3: Code on complete (Default: {}) <CODE>
  * 4: Code params (Default: []) <ARRAY>
+ * 5: Title (Default: "") <STRING>
  * 
  * Return value:
  * None
@@ -16,7 +17,7 @@
  * [10, "test", allPlayers] call minigames_common_fnc_startCountdown
  */
 
-params ["_countdownTime", "_identifier", "_targets", ["_code", {}], ["_params", []]];
+params ["_countdownTime", "_identifier", "_targets", ["_code", {}], ["_params", []], ["_title", ""]];
 
 if (!isRemoteExecuted) then {
     _this remoteExecCall [QFUNC(startCountdown), _targets];
@@ -29,11 +30,12 @@ if (!isRemoteExecuted) then {
         [_identifier, clientOwner] call FUNC(endCountdown);
     };
     
+    private _display = uiNamespace getVariable [QGVAR(minigamesCountdown), displayNull];
+    (_display displayCtrl 69002) ctrlSetText _title;
     private _pfh = [{
-        (_this select 0) params ["_beginTime", "_countdownTime", "_identifier", "_code", "_params"];
+        (_this select 0) params ["_beginTime", "_countdownTime", "_identifier", "_code", "_params", "_display"];
         
         private _elapsedTime = CBA_missionTime - _beginTime;
-        private _display = uiNamespace getVariable [QGVAR(minigamesCountdown), displayNull];
         
         if (_elapsedTime > _countdownTime) exitWith {
             _params call _code;
@@ -45,7 +47,7 @@ if (!isRemoteExecuted) then {
             _remainingTime = _remainingTime select [0, (_remainingTime find ".") + 2];
             (_display displayCtrl 69001) ctrlSetText _remainingTime;
         };
-    }, 0.1, [CBA_missionTime, _countdownTime, _identifier, _code, _params]] call CBA_fnc_addPerFrameHandler;
+    }, 0.1, [CBA_missionTime, _countdownTime, _identifier, _code, _params, _display]] call CBA_fnc_addPerFrameHandler;
     
     GVAR(shownCountdown) pushBack _pfh;
     GVAR(activeCountdowns) set [_identifier, _pfh];
