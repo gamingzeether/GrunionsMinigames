@@ -1,5 +1,8 @@
 #include "script_macros.hpp"
 
 call EFUNC(common,init);
-call EFUNC(fyshinabarrel,init);
-call EFUNC(jousting,init);
+
+{
+    private _minigameCfg = MISSION_CONFIG >> _x;
+    call compile getText (_minigameCfg >> "init");
+} foreach getArray (MISSION_CONFIG >> "minigamesList");

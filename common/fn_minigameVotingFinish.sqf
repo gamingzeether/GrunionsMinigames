@@ -41,7 +41,7 @@ private _highestVoteCount = -1;
 GVAR(votingSelections) = createHashmap;
 
 // Start minigame
-private _minigameCfg = missionConfigFile >> "CfgGrunionsMinigames" >> (GVAR(minigamesList) select selectRandom _highestVotes);
+private _minigameCfg = MISSION_CONFIG >> (GVAR(minigamesList) select selectRandom _highestVotes);
 private _minigameLogic = missionNamespace getVariable [getText (_minigameCfg >> "logicEntity"), objNull];
 
 GVAR(isSelectingMinigame) = false;

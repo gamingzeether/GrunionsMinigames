@@ -20,7 +20,7 @@ if (!GVAR(isSelectingMinigame)) exitWith {};
 private _display = uiNamespace getVariable [QGVAR(selectionMenu), displayNull];
 if (isNull _display) exitWith {};
 
-private _minigameCfg = missionConfigFile >> "CfgGrunionsMinigames" >> (GVAR(minigamesList) select _index);
+private _minigameCfg = MISSION_CONFIG >> (GVAR(minigamesList) select _index);
 (_display displayCtrl 71002) ctrlSetText (getText (_minigameCfg >> "minigameInfo"));
 
 ['minigames_voteSelected', [clientOwner, _index]] call CBA_fnc_serverEvent;

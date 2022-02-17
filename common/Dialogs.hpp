@@ -32,7 +32,7 @@ class GVAR(selectionMenu) {
             h = 0.5300 * __H;
             colorBackground[] = {0, 0, 0, 0.3};
             onLBSelChanged = QUOTE(_this call FUNC(onMenuSelectChange));
-            onLoad = QUOTE( { private _name = getText (missionConfigFile >> 'CfgGrunionsMinigames' >> _x >> 'minigameDisplayName'); (_this select 0) lbAdd _name; } foreach GVAR(minigamesList); );
+            onLoad = QUOTE( { private _name = getText (MISSION_CONFIGM >> _x >> 'minigameDisplayName'); (_this select 0) lbAdd _name; } foreach GVAR(minigamesList); );
         };
         class ItemInfo: RscText {
             idc = 71002;

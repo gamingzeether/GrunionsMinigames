@@ -12,15 +12,35 @@ respawnOnStart = -1;
 
 class CfgGrunionsMinigames {
     minigamesList[] = {"FyshInABarrel", "Jousting"};
+    class Default {
+        init = "";
+        endGameCode = "";
+        perFrameCode = "";
+        respawnPos = "getPosASL lobbyLogic";
+        startGameCode = "";
+        onPlayerKilled = "";
+    };
     
-    class FyshInABarrel {
+    class FyshInABarrel: Default {
         logicEntity = "fyshInABarrelLogic";
         minigameInfo = "Fysh In A Barrel";
         minigameDisplayName = "Fysh In A Barrel";
+        
+        init = QUOTE(call EFUNC(fyshinabarrel,init));
+        endGameCode = QUOTE(call EFUNC(fyshinabarrel,endGameCode));
+        perFrameCode = QUOTE(call EFUNC(fyshinabarrel,perFrameCode));
+        startGameCode = QUOTE(call EFUNC(fyshinabarrel,startGameCode));
+        onPlayerKilled = QUOTE(call EFUNC(fyshinabarrel,onPlayerkilled));
     };
-    class Jousting {
+    class Jousting: Default {
         logicEntity = "joustingLogic";
         minigameInfo = "Jousting";
         minigameDisplayName = "Jousting";
+        
+        init = QUOTE(call EFUNC(jousting,init));
+        endGameCode = QUOTE(call EFUNC(jousting,endGameCode));
+        perFrameCode = QUOTE(call EFUNC(jousting,perFrameCode));
+        startGameCode = QUOTE(call EFUNC(jousting,startGameCode));
+        onPlayerkilled = QUOTE(call EFUNC(jousting,onPlayerkilled));
     };
 };

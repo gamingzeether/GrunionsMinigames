@@ -63,7 +63,7 @@ if (isServer) then {
     
     // Minigame voting
     call FUNC(startMinigameVoting);
-    GVAR(minigamesList) = getArray (missionConfigFile >> "CfgGrunionsMinigames" >> "minigamesList");
+    GVAR(minigamesList) = getArray (MISSION_CONFIG >> "minigamesList");
     
     GVAR(votingSelections) = createHashMap;
     ["minigames_voteSelected", {
@@ -83,4 +83,17 @@ if (isServer) then {
             call EFUNC(common,minigameVotingFinish);
         };
     }] call CBA_fnc_addEventHandler;
+    
+    // Minigame logic functions init
+    {
+        private _minigameCfg = MISSION_CONFIG >> _x;
+        private _logicEntity = missionNamespace getVariable [getText (_minigameCfg >> "logicEntity"), objNull];
+        
+        #define INIT_FUNCTION(var1) _logicEntity setVariable ARR2(QGVAR(var1), compile getText (_minigameCfg >> QUOTE(var1)))
+        INIT_FUNCTION(endGameCode);
+        INIT_FUNCTION(perFrameCode);
+        INIT_FUNCTION(respawnPos);
+        INIT_FUNCTION(startGameCode);
+        INIT_FUNCTION(onPlayerKilled);
+    } foreach GVAR(minigamesList);
 };
