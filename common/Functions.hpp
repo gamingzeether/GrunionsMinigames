@@ -4,6 +4,8 @@ class minigames_common {
         file = "common";
         class addPoints {};
         class addSidebar {};
+        class buildCircularArena {};
+        class buildRectangularArena {};
         class distributeCircle {};
         class distributeGrid {};
         class distributeRing {};
@@ -21,6 +23,5 @@ class minigames_common {
         class startMinigame {};
         class startMinigameVoting {};
         class updateSidebar {};
-        class wallRing {};
     };
 };

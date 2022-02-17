@@ -14,7 +14,7 @@
  * Created objects <ARRAY>
  * 
  * Example:
- * [[0, 0, 5], 15, 10, 10, 10, "Land_Pier_F"] call minigames_common_fnc_placeObjectsGrid
+ * [[0, 0, 5], 15, 10, 10, 10, "Land_Pier_F"] call minigames_common_fnc_distributeGrid
  */
 
 params ["_startPos", "_xSpacing", "_ySpacing", "_xCount", "_yCount", "_type"];

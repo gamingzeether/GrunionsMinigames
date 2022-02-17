@@ -24,6 +24,5 @@ if (isServer) then {
     
     // Create arena
     private _pos = getPosASL MINIGAME_LOGICENTITY;
-    [_pos vectorAdd [0, 0, 1], 60, 1] call EFUNC(common,wallRing);
-    [_pos vectorAdd [-45, -55, -2], 40, 15, 4, 9, "Land_Pier_F"] call EFUNC(common,distributeGrid);
+    [_pos, 60, 2] call EFUNC(common,buildCircularArena);
 };
